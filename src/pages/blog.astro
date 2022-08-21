@@ -11,7 +11,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 ---
 
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="es-UY">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
@@ -27,7 +27,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 				<ul>
 					{posts.map((post) => (
 						<li class="list-none">
-							<a class="visited:text-indigo-800" href={post.url}>{post.frontmatter.title}</a>
+							<a class="visited:text-indigo-200" href={post.url}>{post.frontmatter.title}</a>
 							<time class="text-gray-400 text-sm self-end"
 								datetime={post.frontmatter.pubDate}>
 								{new Date(post.frontmatter.pubDate).toLocaleDateString('es-UY', {

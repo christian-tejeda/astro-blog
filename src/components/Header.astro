@@ -3,14 +3,14 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../config';
 ---
 
-<header class="mb-4 text-xl text-center capitalize">
-	<h2 class="my-2">
+<header class="my-4 text-center capitalize">
+	<h2 class="my-4 text-lg">
 		{SITE_TITLE}
 	</h2>
 	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">Sobre mí</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
+		<HeaderLink href="/">Inicio</HeaderLink> |
+		<HeaderLink href="/blog">Blog</HeaderLink> |
+		<HeaderLink href="/about">Sobre mí</HeaderLink> |
+		<HeaderLink href="https://github.com/christian-tejeda" target="_blank">GitHub</HeaderLink>
 	</nav>
 </header>
