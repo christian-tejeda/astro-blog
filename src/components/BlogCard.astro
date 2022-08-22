@@ -11,9 +11,9 @@ const { title, description, pubDate, url, heroImage } = Astro.props as Props;
 ---
 <a href={url} class="flex flex-row items-center my-4 rounded-lg border border-gray-500 bg-slate-900 shadow-md group">
 		<img class="w-48 h-48 object-cover rounded-lg" src={heroImage} />
-		<div class="flex flex-col justify-center p-4">
-			<h4 class="text-xl font-bold transition-all group-hover:text-indigo-400">{title}</h4>
-			<time class="text-gray-400 text-sm my-2"
+		<div class="flex flex-col justify-center p-4 prose dark:prose-invert">
+			<h3 class="transition-all group-hover:text-indigo-400">{title}</h3>
+			<time class="text-gray-400 text-sm"
 				datetime={pubDate}>
 				{new Date(pubDate).toLocaleDateString('es-UY', {
 					year: 'numeric',

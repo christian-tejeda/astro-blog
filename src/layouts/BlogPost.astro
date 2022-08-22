@@ -1,6 +1,5 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 export interface Props {
@@ -25,7 +24,7 @@ const { content: { title, description, pubDate, updatedDate, heroImage } } = Ast
 	<body class="container flex flex-col justify-items-center items-center mx-auto w-1/3">
 		<!-- <Header /> -->
 		<main>
-			<article>
+			<article class="prose dark:prose-invert">
 				{heroImage && (
 					<img
 					    class="object-cover my-8 rounded-lg shadow-md border-gray-200"
@@ -34,10 +33,10 @@ const { content: { title, description, pubDate, updatedDate, heroImage } } = Ast
 						
 					/>
 				)}
-				<h1 class="title my-4 text-3xl font-bold">{title}</h1>
+				<h1 class="title">{title}</h1>
 				{pubDate && <time>{pubDate}</time>}
-				<div class="text-gray-400">{updatedDate && <div>Actualizado por última vez: <time>{updatedDate}</time></div>}</div>
-				<hr class="my-2 border border-solid border-slate-300"/>
+				<div class="text-gray-400 text-xs">{updatedDate && <div>Actualizado por última vez: <time>{updatedDate}</time></div>}</div>
+				<hr/>
 				<slot />
 			</article>
 		</main>
