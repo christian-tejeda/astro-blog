@@ -2,10 +2,11 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import BlogCard from '../components/BlogCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+const posts = (await Astro.glob('./blog/*.md')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
@@ -25,7 +26,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 		<main>
 			<content>
 				<ul>
-					{posts.map((post) => (
+					<!-- {posts.map((post) => (
 						<li class="list-none">
 							<a class="visited:text-indigo-200" href={post.url}>{post.frontmatter.title}</a>
 							<time class="text-gray-400 text-sm self-end"
@@ -36,6 +37,17 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 									day: 'numeric',
 								})}
 							</time>
+						</li>
+					))} -->
+					{posts.map((post) => (
+						<li class="list-none">
+							<BlogCard 
+								title={post.frontmatter.title} 
+								description={post.frontmatter.description}
+								pubDate={post.frontmatter.pubDate}
+								url={post.url}
+								heroImage={post.frontmatter.heroImage}
+							/>
 						</li>
 					))}
 				</ul>

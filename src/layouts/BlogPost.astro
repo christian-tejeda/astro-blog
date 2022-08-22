@@ -10,12 +10,11 @@ export interface Props {
 		pubDate?: string;
 		updatedDate?: string;
 		heroImage?: string;
-	};
+	}
+
 }
 
-const {
-	content: { title, description, pubDate, updatedDate, heroImage },
-} = Astro.props as Props;
+const { content: { title, description, pubDate, updatedDate, heroImage } } = Astro.props as Props;
 ---
 
 <html>
@@ -35,8 +34,8 @@ const {
 						alt=""
 					/>
 				)}
-				<h1 class="title mt-2 text-2xl font-bold">{title}</h1>
-				{pubDate && <time>{pubDate}</time>} <!-- parámetros en el archivo .md -->
+				<h1 class="title my-4 text-3xl font-bold">{title}</h1>
+				{pubDate && <time>{pubDate}</time>}
 				<div class="text-gray-400">{updatedDate && <div>Actualizado por última vez: <time>{updatedDate}</time></div>}</div>
 				<hr class="my-2 border border-solid border-slate-300"/>
 				<slot />
