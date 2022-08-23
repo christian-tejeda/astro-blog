@@ -2,7 +2,8 @@
 
 A personal blog client application made with [Astro](https://astro.build/) (based off their blog template). Deployment available on [Vercel](https://astro-blog-alpha.vercel.app/).
 
-Each page follows a file-based routing, meaning each `.astro/.md` file has its own route. Blog entries are written in Markdown get a layout applied automatically.
+Each page follows a file-based routing, meaning each `.astro/.md` file has its own route. Blog entries written in Markdown get a layout applied automatically.
+
 ## Commands
 
 | Command                | Action                                           |
@@ -19,3 +20,4 @@ Each page follows a file-based routing, meaning each `.astro/.md` file has its o
 - [ ] Add a nice home page
 - [ ] Work on the about me page
 - [ ] Write some simple Markdown articles
+- [ ] Add some basic SEO functionality
